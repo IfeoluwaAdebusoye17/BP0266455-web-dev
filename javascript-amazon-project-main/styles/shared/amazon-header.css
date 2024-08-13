@@ -43,22 +43,6 @@
   margin-top: 5px;
 }
 
-.amazon-mobile-logo {
-  display: none;
-}
-
-@media (max-width: 575px) {
-  .amazon-logo {
-    display: none;
-  }
-
-  .amazon-mobile-logo {
-    display: block;
-    height: 35px;
-    margin-top: 5px;
-  }
-}
-
 .amazon-header-middle-section {
   flex: 1;
   max-width: 850px;

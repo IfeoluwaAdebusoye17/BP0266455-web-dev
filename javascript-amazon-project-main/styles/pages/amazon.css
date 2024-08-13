@@ -2,8 +2,10 @@
   margin-top: 60px;
 }
 
+/*So the banner is the width of the screen and keeps aspect ratio*/
 .home-banner {
-  width: 999px;
+  width: 100%;
+  height: auto;
 }
 
 .products-grid {

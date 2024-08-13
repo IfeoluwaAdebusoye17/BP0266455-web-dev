@@ -1,5 +1,5 @@
-.amazon-header {
-  background-color: rgb(19, 25, 33);
+.lloyds-header {
+  background-color: #1046a3;
   color: white;
   padding-left: 15px;
   padding-right: 15px;
@@ -38,7 +38,7 @@
   border: 1px solid white;
 }
 
-.amazon-logo {
+.lloyds-logo {
   width: 100px;
   margin-top: 5px;
 }
@@ -94,12 +94,6 @@
 .returns-text {
   display: block;
   font-size: 13px;
-}
-
-.orders-text {
-  display: block;
-  font-size: 15px;
-  font-weight: 700;
 }
 
 .cart-link {

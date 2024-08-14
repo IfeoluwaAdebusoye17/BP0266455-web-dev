@@ -1,5 +1,5 @@
-import { program } from "../data/program.js";
-import { products } from "../data/products.js";
+import {program, selectProgram} from "../data/program.js";
+import {products} from "../data/products.js";
 
 let productsHTML = '';
 
@@ -59,14 +59,13 @@ products.forEach((product) => {
 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
+
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
     button.addEventListener('click', () => {
-      const courseId = button.dataset.courseId
+      const courseId = button.dataset.courseId;
 
-      program = courseId;
-      console.log(program);
-
-
+      selectProgram(courseId);
+        
     });
   });

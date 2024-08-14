@@ -1,4 +1,3 @@
-let program = '';
+export let program = '';
 
 
-console.log(program);

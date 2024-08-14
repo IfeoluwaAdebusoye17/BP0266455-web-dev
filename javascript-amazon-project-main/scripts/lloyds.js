@@ -1,3 +1,6 @@
+import { program } from "../data/program.js";
+
+
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -48,7 +51,7 @@ products.forEach((product) => {
 
       <button class="add-to-cart-button button-primary js-add-to-cart"
       data-course-id="${product.id}">
-        Add to Cart
+        View Course
       </button>
     </div>
   `;
@@ -61,13 +64,6 @@ document.querySelectorAll('.js-add-to-cart')
     button.addEventListener('click', () => {
       const courseId = button.dataset.courseId
 
-      //console.log(courseName);
-      /*
-      program.push({
-        courseName: courseName,
-        quantity: 1
-      });
-      */
       program = courseId;
       console.log(program);
 

@@ -50,10 +50,12 @@ products.forEach((product) => {
         Added
       </div>
 
-      <button class="add-to-cart-button button-primary js-add-to-cart"
-      data-course-id="${product.id}">
-        View Course
-      </button>
+      <a href="program.html">
+        <button class="add-to-cart-button button-primary js-add-to-cart"
+        data-course-id="${product.id}">
+          View Course
+        </button>
+      </a>
     </div>
   `;
 });

@@ -14,3 +14,16 @@ export function selectProgram(courseId) {
   console.log(program);
 }
 
+export function removeFromCart(productId) {
+  const newCart = [];
+
+  program.forEach((cartItem) => {
+    
+    if(cartItem.courseId !== productId ) {
+      newCart.push(cartItem);
+    }
+      
+  });
+
+  program = newCart;
+}

@@ -17,7 +17,8 @@ program.forEach((programItem) => {
 
   
   cartSummaryHTML += `
-    <div class="cart-item-container">
+    <div class="cart-item-container 
+    js-cart-item-container-${matchingProgram.id}">
       <div class="delivery-date">
         This is the ‘Welcome to IT course’ complete it to understand your role
       </div>
@@ -104,6 +105,12 @@ document.querySelector('.js-order-summary')
       link.addEventListener('click', () => {
         const productId = link.dataset.productId;
         removeFromCart(productId);
+
+        const container = document.querySelector(
+          `.js-cart-item-container-${productId}`
+        )
+
+        container.remove();
       })
     });
 

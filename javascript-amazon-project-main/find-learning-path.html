@@ -16,7 +16,8 @@
     <!-- Here are the CSS files for this page. -->
     <link rel="stylesheet" href="styles/shared/general.css">
     <link rel="stylesheet" href="styles/shared/amazon-header.css">
-    <link rel="stylesheet" href="styles/pages/orders.css">
+    <!--<link rel="stylesheet" href="styles/pages/orders.css">-->
+    <link rel="stylesheet" href="styles/pages/amazon.css">
   </head>
   <body>
     <div class="lloyds-header">
@@ -28,11 +29,17 @@
       </div>
 
       <div class="amazon-header-middle-section">
+
+        <!--
         <input class="search-bar" type="text" placeholder="Search all courses">
 
         <button class="search-button">
           <img class="search-icon" src="images/icons/search-icon.png">
         </button>
+      -->
+
+        <input type="text" id="searchBar" placeholder="Search for courses...">
+        <div id="productList"></div>
       </div>
 
       <div class="amazon-header-right-section">
@@ -56,8 +63,8 @@
       <button>Submit</button>
   
 
-      <div class="orders-grid">
-        <div class="order-container">
+      <div class="products-grid js-products-grid">
+<!--        <div class="order-container">
           
           <div class="order-header">
             <div class="order-header-left-section">
@@ -99,11 +106,7 @@
             </div>
 
             <div class="product-actions">
-              <a href="my-learning.html">
-                <button class="track-package-button button-secondary">
-                  Course Overview
-                </button>
-              </a>
+              
             </div>
 
             <div class="product-image-container">
@@ -126,13 +129,7 @@
               </button>
             </div>
 
-            <div class="product-actions">
-              <a href="my-learning.html">
-                <button class="track-package-button button-secondary">
-                  Course Overview
-                </button>
-              </a>
-            </div>
+            
           </div>
         </div>
 
@@ -178,15 +175,13 @@
             </div>
 
             <div class="product-actions">
-              <a href="my-learning.html">
-                <button class="track-package-button button-secondary">
-                  Course Overview
-                </button>
-              </a>
+              
             </div>
           </div>
         </div>
+      -->
       </div>
     </div>
+    <script type="module" src="scripts/lloyds.js"></script>
   </body>
 </html>

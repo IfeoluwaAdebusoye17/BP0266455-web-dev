@@ -99,9 +99,24 @@ displayProducts(products);
 // Search functionality
 document.getElementById('searchBar').addEventListener('input', (event) => {
   const searchTerm = event.target.value.toLowerCase();
+  
   const filteredProducts = products.filter(product => 
     product.name.toLowerCase().includes(searchTerm) 
     //|| product.category.toLowerCase().includes(searchTerm)
   );
+
+  displayProducts(filteredProducts);
+});
+
+
+// Drop down functionality
+document.getElementById('myForm').addEventListener('submit', (event) => {
+  event.preventDefault(); // Prevent the form from submitting
+  const selectedOption = document.getElementById('myDropdown').value.toLowerCase();
+
+  const filteredProducts = products.filter(product => 
+    product.name.toLocaleLowerCase().includes(selectedOption)
+  );
+  
   displayProducts(filteredProducts);
 });

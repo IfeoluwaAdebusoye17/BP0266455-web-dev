@@ -74,6 +74,7 @@
   flex-shrink: 0;
 }
 
+/*find better way to centre*/
 .search-icon {
   height: 22px;
   margin-left: 2px;
@@ -93,3 +94,22 @@
   color: white;
 }
 
+.search-text {
+  color: white;
+  margin-top: 6px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-link {
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.search-link:hover {
+  text-decoration: underline;
+  text-decoration-color: white;
+}

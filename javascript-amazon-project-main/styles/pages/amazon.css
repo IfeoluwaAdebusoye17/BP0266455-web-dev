@@ -177,3 +177,12 @@
   padding: 8px;
   border-radius: 50px;
 }
+
+
+/*additions because of consolodating class*/
+
+.page-title {
+  font-weight: 700;
+  font-size: 26px;
+  margin-bottom: 25px;
+}

@@ -2,6 +2,32 @@ import { program, removeFromCart } from "../data/program.js";
 import { products } from "../data/products.js"; 
 import { formatCurrency } from "./utils/money.js";
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const firstName = localStorage.getItem('firstName');
+  const middleName = localStorage.getItem('middleName');
+  const lastName = localStorage.getItem('lastName');
+  const startDate = localStorage.getItem('startDate');
+
+  if (firstName) {
+    document.getElementById('user-first-name').textContent = firstName;
+  }
+
+  if (middleName) {
+    document.getElementById('user-middle-name').textContent = middleName;
+  }
+
+  if (lastName) {
+    document.getElementById('user-last-name').textContent = lastName;
+  }
+  
+  if (lastName) {
+    document.getElementById('start-date').textContent = startDate;
+  }
+
+});
+
+
 let cartSummaryHTML = '';
 
 program.forEach((programItem) => {
@@ -20,7 +46,7 @@ program.forEach((programItem) => {
     <div class="cart-item-container 
     js-cart-item-container-${matchingProgram.id}">
       <div class="delivery-date">
-        This is the ‘Welcome to IT course’ complete it to understand your role
+        This is the ‘Welcome to ${matchingProgram.name} training path’ complete the courses to understand your role
       </div>
 
       <div class="cart-item-details-grid">
@@ -42,14 +68,14 @@ program.forEach((programItem) => {
               Update
             </span>
             <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProgram.id}">
-              Delete
+              Unenroll
             </span>
           </div>
         </div>
 
         <div class="delivery-options">
           <div class="delivery-options-title">
-            Choose a delivery option:
+            Courses in program:
           </div>
           <div class="delivery-option">
             <input type="radio" checked
@@ -57,10 +83,10 @@ program.forEach((programItem) => {
               name="delivery-option-${matchingProgram.id}">
             <div>
               <div class="delivery-option-date">
-                Tuesday, June 21
+                Get started
               </div>
               <div class="delivery-option-price">
-                FREE Shipping
+                In this course we will discuss how engineering works in Lloyds
               </div>
             </div>
           </div>
@@ -70,10 +96,11 @@ program.forEach((programItem) => {
               name="delivery-option-${matchingProgram.id}">
             <div>
               <div class="delivery-option-date">
-                Wednesday, June 15
+                Get setup
               </div>
               <div class="delivery-option-price">
-                $4.99 - Shipping
+                In this course we will discuss how we can get setup in this environment called engineerig alright you will be able to see how we can accurately show our passions for
+                this topic.
               </div>
             </div>
           </div>
@@ -83,10 +110,10 @@ program.forEach((programItem) => {
               name="delivery-option-${matchingProgram.id}">
             <div>
               <div class="delivery-option-date">
-                Monday, June 13
+                Attempt lab
               </div>
               <div class="delivery-option-price">
-                $9.99 - Shipping
+                This is the final course where we will eat the malt together and praise his name together you are worthy of praise JESUS.
               </div>
             </div>
           </div>

@@ -32,21 +32,6 @@ function displayProducts(filteredProducts) {
           $${formatCurrency(product.priceCents)}
         </div>
 
-        <div class="product-quantity-container">
-          <select>
-            <option selected value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
-        </div>
-
         <div class="product-spacer"></div>
 
         <div class="added-to-cart">
@@ -79,22 +64,10 @@ function displayProducts(filteredProducts) {
   });
 }
 
+// Initial display of all products(temp)
+//displayProducts(products);
 
-
-// Function to display products
-//function displayProducts(filteredProducts) {
-  //const productList = document.getElementById('productList');
-  //productList.innerHTML = '';
-//  filteredProducts.forEach(product => {
-    //const productItem = document.createElement('div');
-    //productItem.textContent = `${product.name} `;
-    //- ${product.category}
-    //productList.appendChild(productItem);
-//  });
-//}
-
-// Initial display of all products
-displayProducts(products);
+/*
 
 // Search functionality
 document.getElementById('searchBar').addEventListener('input', (event) => {
@@ -102,16 +75,37 @@ document.getElementById('searchBar').addEventListener('input', (event) => {
   
   const filteredProducts = products.filter(product => 
     product.name.toLowerCase().includes(searchTerm) 
-    //|| product.category.toLowerCase().includes(searchTerm)
   );
 
   displayProducts(filteredProducts);
 });
 
+*/
 
 // Drop down functionality
-document.getElementById('myForm').addEventListener('submit', (event) => {
+document.getElementById('myForm').addEventListener('submit', (event) => { 
   event.preventDefault(); // Prevent the form from submitting
+  if (!validateForm()) {
+    return;
+  }
+
+  const firstName = document.getElementById('js-first-name').value;
+  localStorage.setItem('firstName', firstName);
+
+  const middleName = document.getElementById('js-middle-name').value;
+  localStorage.setItem('middleName', middleName);
+
+  const lastName = document.getElementById('js-last-name').value;
+  localStorage.setItem('lastName', lastName);
+
+
+  const startDate = document.getElementById('js-date').value;
+  localStorage.setItem('startDate', startDate);
+
+  
+
+
+
   const selectedOption = document.getElementById('myDropdown').value.toLowerCase();
 
   const filteredProducts = products.filter(product => 
@@ -120,3 +114,48 @@ document.getElementById('myForm').addEventListener('submit', (event) => {
   
   displayProducts(filteredProducts);
 });
+
+
+
+function isValidName(name) {
+  const regex = /^[a-zA-Z ]+$/;
+  return regex.test(name);
+}
+
+function validateForm() {
+  const firstNameInput = document.getElementById("js-first-name").value;
+  const middleNameInput = document.getElementById("js-middle-name").value;
+  const lastNameInput = document.getElementById("js-last-name").value;
+  const dateInput = document.getElementById("js-date").value;
+
+  if (!isValidName(firstNameInput)) {
+    alert("Invalid name. Please use only alphabetic characters and spaces.");
+    document.getElementById("js-first-name").value = '';
+    return false;
+  } else if (!isValidName(middleNameInput) && (middleNameInput !== '')) {
+    alert("Invalid name. Please use only alphabetic characters and spaces.");
+    document.getElementById("js-middle-name").value = '';
+    return false;
+  } else if (!isValidName(lastNameInput)) {
+    alert("Invalid name. Please use only alphabetic characters and spaces.");
+    document.getElementById("js-last-name").value = '';
+    return false;
+  }
+
+  if (!isValidDate(dateInput)) {
+    alert("Invalid date. Please select a future date or today's date.");
+    document.getElementById("js-date").value = '';
+    return false;
+  }
+
+  return true;
+}
+
+
+function isValidDate(date) {
+  const today = new Date();
+  const inputDate = new Date(date);
+  today.setHours(0, 0, 0, 0); // Set the time to midnight to compare only the date part
+  return inputDate >= today;
+}
+

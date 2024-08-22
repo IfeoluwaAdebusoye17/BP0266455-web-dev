@@ -37,8 +37,13 @@
         </button>
       -->
 
+
+      <!--
+        Temp remove search
         <input type="text" id="searchBar" placeholder="Search for courses...">
         <div id="productList"></div>
+
+      -->
       </div>
 
       <div class="lloyd-header-right-section">
@@ -52,28 +57,31 @@
       <div class="page-title">Find learning path</div>
 
       <form id="myForm">
-        <input placeholder="First name" required>
-        <input placeholder="Middle name[s]">
-        <input placeholder="Surname" required>
+        <input placeholder="First name" required id="js-first-name">
+        <input placeholder="Middle name[s]" id="js-middle-name">
+        <input placeholder="Surname" required id="js-last-name">
     
         <p>Starting date</p>
-        <input type="date" required>
+        <input type="date" required id="js-date">
     
         <p>Job role</p>
         <select id="myDropdown" required>
-          <option value="" selected disabled hidden>Select an option</option>
-          <option value="Black">Black</option>
-          <option value="Size">Size</option>
-          <option value="Shirt">Shirt</option>
+          <option value="" selected disabled hidden>Select option</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Sales">Sales</option>
+          <option value="HR">HR</option>
         </select>
 
         <section>
           <button>Submit</button>
         </section>
       </form>
-      
-  
+      <div class="main">
+        <p>Training Paths</p>
 
+      </div>
+  
+      <!--check what the div main class was and why was needed on lloyds.html-->
       <div class="products-grid js-products-grid">
       </div>
     </div>

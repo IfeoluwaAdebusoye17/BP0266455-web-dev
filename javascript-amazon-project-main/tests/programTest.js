@@ -5,7 +5,7 @@ import { selectProgram, program, loadFromStorage } from "../data/program.js";
 
 
 describe('test suite: selectedProgram', () => {
-    it('adds selected program', () => {
+    it('takes user to selected program', () => {
         spyOn(localStorage, 'setItem');
         
         spyOn(localStorage, 'getItem').and.callFake(() => {

@@ -34,31 +34,13 @@ input, select, button {
 }
 
 .button-primary:hover {
-  background-color: rgb(247, 202, 0);
-  border: 1px solid rgb(242, 194, 0);
+  background-color: #0b47a785;
+  border: 1px solid #0a4cb780;
 }
 
 .button-primary:active {
-  background: rgb(255, 216, 20);
-  border-color: rgb(252, 210, 0);
-  box-shadow: none;
-}
-
-.button-secondary {
-  color: rgb(33, 33, 33);
-  background: white;
-  border: 1px solid rgb(213, 217, 217);
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
-}
-
-.button-secondary:hover {
-  background-color: rgb(247, 250, 250);
-}
-
-.button-secondary:active {
-  background-color: rgb(237, 253, 255);
+  background: #0b47a7b9;
+  border-color: #0a4cb7b0;
   box-shadow: none;
 }
 
@@ -97,5 +79,5 @@ select {
 
 select:focus,
 input:focus {
-  outline: 2px solid rgb(255, 153, 0);
+  outline: 2px solid #0b47a785;
 }

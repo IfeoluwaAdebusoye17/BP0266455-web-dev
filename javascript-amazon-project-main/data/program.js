@@ -1,11 +1,16 @@
-export let program = JSON.parse(localStorage.getItem('cart'));  
+export let program;
 
+loadFromStorage();
 
-if (!program) {
-  program = [{
-    courseId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-    quantity: 2
-  }];
+export function loadFromStorage() {
+  JSON.parse(localStorage.getItem('cart'));  
+
+  if (!program) {
+    program = [{
+      courseId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+      quantity: 2
+    }];
+  }
 }
 
 function saveToStorage() {

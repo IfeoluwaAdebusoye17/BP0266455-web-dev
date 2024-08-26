@@ -34,11 +34,6 @@ function displayProducts(filteredProducts) {
 
         <div class="product-spacer"></div>
 
-        <div class="added-to-cart">
-          <img src="images/icons/checkmark.png">
-          Added
-        </div>
-
         <a href="program.html">
           <button class="add-to-cart-button button-primary js-add-to-cart"
           data-course-id="${product.id}">

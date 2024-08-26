@@ -3,6 +3,7 @@ import { selectProgram, program, loadFromStorage } from "../data/program.js";
 /*Mocking to remove all items from program landing page*/
 /*We have also mocked set so our tests do not effect the local storage*/
 
+
 describe('test suite: selectedProgram', () => {
     it('adds selected program', () => {
         spyOn(localStorage, 'setItem');
@@ -30,4 +31,7 @@ describe('test suite: selectedProgram', () => {
 
     });
 
+    
+
 })
+

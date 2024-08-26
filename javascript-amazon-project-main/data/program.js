@@ -3,7 +3,7 @@ export let program;
 loadFromStorage();
 
 export function loadFromStorage() {
-  JSON.parse(localStorage.getItem('cart'));  
+  program = JSON.parse(localStorage.getItem('cart'));  
 
   if (!program) {
     program = [{

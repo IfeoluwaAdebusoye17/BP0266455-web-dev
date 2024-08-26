@@ -61,9 +61,6 @@ program.forEach((programItem) => {
             <span>
               Quantity: <span class="quantity-label">${programItem.quantity}</span>
             </span>
-            <span class="update-quantity-link link-primary">
-              Update
-            </span>
             <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProgram.id}">
               Unenroll
             </span>
@@ -80,7 +77,7 @@ program.forEach((programItem) => {
               name="delivery-option-${matchingProgram.id}">
             <div>
               <div class="delivery-option-date">
-                Get started
+                Course One: Get started
               </div>
               <div class="delivery-option-price">
                 In this course we will discuss how engineering works in Lloyds
@@ -93,7 +90,7 @@ program.forEach((programItem) => {
               name="delivery-option-${matchingProgram.id}">
             <div>
               <div class="delivery-option-date">
-                Get setup
+                Course Two: Get setup
               </div>
               <div class="delivery-option-price">
                 In this course we will discuss how we can get setup in this environment called engineerig alright you will be able to see how we can accurately show our passions for
@@ -107,7 +104,7 @@ program.forEach((programItem) => {
               name="delivery-option-${matchingProgram.id}">
             <div>
               <div class="delivery-option-date">
-                Attempt lab
+                Course Three: Attempt lab
               </div>
               <div class="delivery-option-price">
                 This is the final course where we will eat the malt together and praise his name together you are worthy of praise JESUS.

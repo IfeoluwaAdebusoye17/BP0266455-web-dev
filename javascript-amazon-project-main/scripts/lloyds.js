@@ -5,7 +5,7 @@ import {products} from "../data/products.js";
 let productsHTML = '';
 
 
-function displayProducts(filteredProducts) {
+export function displayProducts(filteredProducts) {
   productsHTML = '';
   //products.forEach((product) => {
   filteredProducts.forEach(product => {
@@ -75,43 +75,48 @@ document.getElementById('searchBar').addEventListener('input', (event) => {
 
 // Drop down functionality
 //To check if element exists before adding event listener
-const myForm = document.getElementById('myForm');
-if(myForm){
-  myForm.addEventListener('submit', (event) => { 
-    event.preventDefault(); // Prevent the form from submitting
-    if (!validateForm()) {
-      return;
-    }
 
-    const firstName = document.getElementById('js-first-name').value;
-    localStorage.setItem('firstName', firstName);
+export function filterRelevant() {
+  const myForm = document.getElementById('myForm');
+  if(myForm){
+    myForm.addEventListener('submit', (event) => { 
+      event.preventDefault(); // Prevent the form from submitting
+      if (!validateForm()) {
+        return;
+      }
 
-    const middleName = document.getElementById('js-middle-name').value;
-    localStorage.setItem('middleName', middleName);
+      const firstName = document.getElementById('js-first-name').value;
+      localStorage.setItem('firstName', firstName);
 
-    const lastName = document.getElementById('js-last-name').value;
-    localStorage.setItem('lastName', lastName);
+      const middleName = document.getElementById('js-middle-name').value;
+      localStorage.setItem('middleName', middleName);
 
-
-    const startDateInput = document.getElementById('js-date').value;
-    const startDate = new Date(startDateInput);
-    const formattedStartDate = formatDateToWords(startDate);
-    localStorage.setItem('startDate', formattedStartDate);
-
-    
+      const lastName = document.getElementById('js-last-name').value;
+      localStorage.setItem('lastName', lastName);
 
 
+      const startDateInput = document.getElementById('js-date').value;
+      const startDate = new Date(startDateInput);
+      const formattedStartDate = formatDateToWords(startDate);
+      localStorage.setItem('startDate', formattedStartDate);
 
-    const selectedOption = document.getElementById('myDropdown').value.toLowerCase();
+      
 
-    const filteredProducts = products.filter(product => 
-      product.name.toLocaleLowerCase().includes(selectedOption)
-    );
-    
-    displayProducts(filteredProducts);
-  }); 
+
+
+      const selectedOption = document.getElementById('myDropdown').value.toLowerCase();
+
+      const filteredProducts = products.filter(product => 
+        product.name.toLocaleLowerCase().includes(selectedOption)
+      );
+      
+      console.log(filteredProducts);
+      displayProducts(filteredProducts);
+    }); 
+  }
 }
 
+filterRelevant();
 
 export function isValidName(name) {
   const regex = /^[a-zA-Z ]+$/;

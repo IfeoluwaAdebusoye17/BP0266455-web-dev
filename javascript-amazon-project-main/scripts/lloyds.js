@@ -78,41 +78,46 @@ document.getElementById('searchBar').addEventListener('input', (event) => {
 */
 
 // Drop down functionality
-document.getElementById('myForm').addEventListener('submit', (event) => { 
-  event.preventDefault(); // Prevent the form from submitting
-  if (!validateForm()) {
-    return;
-  }
+//To check if element exists before adding event listener
+const myForm = document.getElementById('myForm');
+if(myForm){
+  myForm.addEventListener('submit', (event) => { 
+    event.preventDefault(); // Prevent the form from submitting
+    if (!validateForm()) {
+      return;
+    }
 
-  const firstName = document.getElementById('js-first-name').value;
-  localStorage.setItem('firstName', firstName);
+    const firstName = document.getElementById('js-first-name').value;
+    localStorage.setItem('firstName', firstName);
 
-  const middleName = document.getElementById('js-middle-name').value;
-  localStorage.setItem('middleName', middleName);
+    const middleName = document.getElementById('js-middle-name').value;
+    localStorage.setItem('middleName', middleName);
 
-  const lastName = document.getElementById('js-last-name').value;
-  localStorage.setItem('lastName', lastName);
-
-
-  const startDate = document.getElementById('js-date').value;
-  localStorage.setItem('startDate', startDate);
-
-  
+    const lastName = document.getElementById('js-last-name').value;
+    localStorage.setItem('lastName', lastName);
 
 
+    const startDateInput = document.getElementById('js-date').value;
+    const startDate = new Date(startDateInput);
+    const formattedStartDate = formatDateToWords(startDate);
+    localStorage.setItem('startDate', formattedStartDate);
 
-  const selectedOption = document.getElementById('myDropdown').value.toLowerCase();
-
-  const filteredProducts = products.filter(product => 
-    product.name.toLocaleLowerCase().includes(selectedOption)
-  );
-  
-  displayProducts(filteredProducts);
-});
+    
 
 
 
-function isValidName(name) {
+    const selectedOption = document.getElementById('myDropdown').value.toLowerCase();
+
+    const filteredProducts = products.filter(product => 
+      product.name.toLocaleLowerCase().includes(selectedOption)
+    );
+    
+    displayProducts(filteredProducts);
+  }); 
+}
+
+
+export function isValidName(name) {
   const regex = /^[a-zA-Z ]+$/;
   return regex.test(name);
 }
@@ -147,10 +152,33 @@ function validateForm() {
 }
 
 
-function isValidDate(date) {
+export function isValidDate(date) {
   const today = new Date();
   const inputDate = new Date(date);
   today.setHours(0, 0, 0, 0); // Set the time to midnight to compare only the date part
   return inputDate >= today;
 }
 
+
+// Function to format a date in "numbers and words" format
+function formatDateToWords(date) {
+  const day = date.getDate();
+  const monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  const month = monthNames[date.getMonth()];
+  const year = date.getFullYear();
+
+  // Get the ordinal suffix for the day
+  let suffix = "th";
+  if (day === 1 || day === 21 || day === 31) {
+    suffix = "st";
+  }
+  else if (day === 2 || day === 22) {
+    suffix = "nd";
+  }
+  else if (day === 3 || day === 23) {
+    suffix = "rd";
+  }
+
+  return `${day}${suffix} of ${month} ${year}`;
+}

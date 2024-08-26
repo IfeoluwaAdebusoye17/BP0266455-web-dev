@@ -1,6 +1,6 @@
 import { program, removeFromCart } from "../data/program.js";
 import { products } from "../data/products.js"; 
-import { formatCurrency } from "./utils/money.js";
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -56,9 +56,6 @@ program.forEach((programItem) => {
         <div class="cart-item-details">
           <div class="product-name">
             ${matchingProgram.name}
-          </div>
-          <div class="product-price">
-            $${formatCurrency (matchingProgram.priceCents)}
           </div>
           <div class="product-quantity">
             <span>

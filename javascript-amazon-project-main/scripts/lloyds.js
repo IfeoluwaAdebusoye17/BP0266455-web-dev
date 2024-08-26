@@ -1,6 +1,6 @@
 import {program, selectProgram} from "../data/program.js";
 import {products} from "../data/products.js";
-import { formatCurrency } from "./utils/money.js";
+
 
 let productsHTML = '';
 
@@ -26,10 +26,6 @@ function displayProducts(filteredProducts) {
           <div class="product-rating-count link-primary">
             ${product.rating.count}
           </div>
-        </div>
-
-        <div class="product-price">
-          $${formatCurrency(product.priceCents)}
         </div>
 
         <div class="product-spacer"></div>

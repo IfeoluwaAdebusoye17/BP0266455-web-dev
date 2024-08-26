@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('user-last-name').textContent = lastName;
   }
   
-  if (lastName) {
-    document.getElementById('start-date').textContent = startDate;
+  if (startDate) {
+    document.getElementById('start-date').innerHTML = startDate;
   }
 
 });

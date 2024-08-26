@@ -8,7 +8,6 @@ export function loadFromStorage() {
   if (!program) {
     program = [{
       courseId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-      quantity: 2
     }];
   }
 }
@@ -20,7 +19,6 @@ function saveToStorage() {
 export function selectProgram(courseId) {
   program[0] = {
     courseId: courseId,
-    quantity: 1
   };
   
 

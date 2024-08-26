@@ -58,9 +58,6 @@ program.forEach((programItem) => {
             ${matchingProgram.name}
           </div>
           <div class="product-quantity">
-            <span>
-              Quantity: <span class="quantity-label">${programItem.quantity}</span>
-            </span>
             <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProgram.id}">
               Unenroll
             </span>
@@ -80,7 +77,7 @@ program.forEach((programItem) => {
                 Course One: Get started
               </div>
               <div class="delivery-option-price">
-                In this course we will discuss how engineering works in Lloyds
+                ${matchingProgram.courseOne}
               </div>
             </div>
           </div>

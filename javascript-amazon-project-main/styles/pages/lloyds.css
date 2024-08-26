@@ -12,19 +12,36 @@
 .awaiting-section
  {
   margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
+}
+
+.happening-text {
+  padding-left: 20px;
 }
 
 .awaiting-section {
-  margin-top: 40px;
+  margin-top: 15px;
   /*border-top: 1px solid rgb(231, 231, 231); */
-  background-color: darkgray;
+  background-color: rgb(240 241 242);
   padding-top: 20px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  margin-bottom: 5%;
 }
 
 .awaiting-task {
   margin-left: 90px;
   margin-top: 50px;
 }
+
+.white-widget {
+  background-color: white;
+  padding: 20px 40px;
+  margin-right: 5%;
+  margin-top: 3%;
+}
+
 .products-grid {
   display: grid;
 
@@ -181,4 +198,18 @@
   font-weight: 700;
   font-size: 26px;
   margin-bottom: 25px;
+}
+
+
+
+/* Centering a div horizontally */
+.centre {
+  width: 53%; /* Set a width for the div */
+  margin: 0 auto; /* Auto margins on left and right */
+  margin-top: 100px;
+
+}
+
+.button-space {
+  margin-top: 15px;
 }

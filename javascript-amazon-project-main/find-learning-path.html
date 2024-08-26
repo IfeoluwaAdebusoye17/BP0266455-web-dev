@@ -54,30 +54,33 @@
     </div>
 
     <div class="main">
-      <div class="page-title">Find learning path</div>
+      <div class="centre">
+        <div class="page-title">Find learning path</div>
+      
+        <form id="myForm">
+          <input placeholder="First name" required id="js-first-name">
+          <input placeholder="Middle name[s]" id="js-middle-name">
+          <input placeholder="Surname" required id="js-last-name">
+      
+          <p>Starting date</p>
+          <input type="date" required id="js-date">
+      
+          <p>Job role</p>
+          <select id="myDropdown" required>
+            <option value="" selected disabled hidden>Select option</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Sales">Sales</option>
+            <option value="HR">HR</option>
+          </select>
 
-      <form id="myForm">
-        <input placeholder="First name" required id="js-first-name">
-        <input placeholder="Middle name[s]" id="js-middle-name">
-        <input placeholder="Surname" required id="js-last-name">
-    
-        <p>Starting date</p>
-        <input type="date" required id="js-date">
-    
-        <p>Job role</p>
-        <select id="myDropdown" required>
-          <option value="" selected disabled hidden>Select option</option>
-          <option value="Engineering">Engineering</option>
-          <option value="Sales">Sales</option>
-          <option value="HR">HR</option>
-        </select>
+          <section>
+            <button class="button-space">Submit</button>
+          </section>
+        </form>
+        <div class="main">
+          <p>Training Paths</p>
 
-        <section>
-          <button>Submit</button>
-        </section>
-      </form>
-      <div class="main">
-        <p>Training Paths</p>
+        </div>
 
       </div>
   

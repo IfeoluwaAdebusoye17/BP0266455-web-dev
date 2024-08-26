@@ -15,7 +15,7 @@ export const products = [
     ]
   },
   {
-    id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+    id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c5",
     image: "images/products/Engineering-technology-course.jpg",
     name: "Engineering technology",
     rating: {

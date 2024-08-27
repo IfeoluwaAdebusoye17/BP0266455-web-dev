@@ -69,7 +69,7 @@
 }
 
 .delivery-date {
-  color: rgb(0, 118, 0);
+  color: #0b46a7;
   font-weight: 700;
   font-size: 19px;
   margin-top: 5px;
@@ -146,7 +146,7 @@
 }
 
 .delivery-option-date {
-  color: rgb(0, 118, 0);
+  color: #0b46a7;
   font-weight: 500;
   margin-bottom: 3px;
 }
@@ -162,36 +162,8 @@
   margin-bottom: 12px;
 }
 
-.payment-summary-row {
-  display: grid;
-  /* 1fr auto; means the width of the 2nd column will be
-     determined by the elements inside the column (auto).
-     The 1st column will take up the remaining space. */
-  grid-template-columns: 1fr auto;
-
-  font-size: 15px;
-  margin-bottom: 9px;
-}
-
-.payment-summary-money {
-  text-align: right;
-}
-
 .subtotal-row .payment-summary-money {
   border-top: 1px solid rgb(222, 222, 222);
-}
-
-.subtotal-row div {
-  padding-top: 9px;
-}
-
-.total-row {
-  color: rgb(177, 39, 4);
-  font-weight: 700;
-  font-size: 18px;
-
-  border-top: 1px solid rgb(222, 222, 222);
-  padding-top: 18px;
 }
 
 .place-order-button {

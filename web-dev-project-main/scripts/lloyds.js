@@ -15,11 +15,7 @@ export function displayProducts(filteredProducts) {
           <img class="product-image"
             src="${product.image}">
         </div>
-
-        <div class="product-name limit-text-to-2-lines">
           ${product.name}
-        </div>
-
         <div class="product-rating-container">
           <img class="product-rating-stars"
             src="images/ratings/rating-${product.rating.stars * 10}.png">
@@ -58,20 +54,6 @@ export function displayProducts(filteredProducts) {
 // Initial display of all products(temp)
 //displayProducts(products);
 
-/*
-
-// Search functionality
-document.getElementById('searchBar').addEventListener('input', (event) => {
-  const searchTerm = event.target.value.toLowerCase();
-  
-  const filteredProducts = products.filter(product => 
-    product.name.toLowerCase().includes(searchTerm) 
-  );
-
-  displayProducts(filteredProducts);
-});
-
-*/
 
 // Drop down functionality
 //To check if element exists before adding event listener

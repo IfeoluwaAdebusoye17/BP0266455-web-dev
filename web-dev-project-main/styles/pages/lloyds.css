@@ -161,25 +161,6 @@
   flex: 1;
 }
 
-.added-to-cart {
-  color: rgb(6, 125, 98);
-  font-size: 16px;
-
-  display: flex;
-  align-items: center;
-  margin-bottom: 8px;
-
-  /* At first, the "Added to cart" message will
-     be invisible. Use JavaScript to change the
-     opacity and make it visible. */
-  opacity: 0;
-}
-
-.added-to-cart img {
-  height: 20px;
-  margin-right: 5px;
-}
-
 .add-to-cart-button {
   width: 100%;
   padding: 8px;
@@ -197,16 +178,9 @@
 
 
 
-/* Centering a div horizontally */
+/* Centering user input div horizontally */
 .centre {
   
-  /*width: 53%;  Set a width for the div 
-  margin: 0 auto; Auto margins on left and right 
-  margin-top: 100px;
-  
-  margin-left: 25%;
-  */
-
   display: flex;
   flex-direction: column;
   align-items: center;

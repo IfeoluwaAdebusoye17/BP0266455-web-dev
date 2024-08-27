@@ -1,5 +1,5 @@
 import { program, removeFromCart } from "../data/program.js";
-import { products } from "../data/products.js"; 
+import { paths } from "../data/paths.js"; 
 
 
 
@@ -35,7 +35,7 @@ program.forEach((programItem) => {
 
   let matchingProgram;
 
-  products.forEach((program) => {
+  paths.forEach((program) => {
     if(program.id === programId) {
       matchingProgram = program
     }

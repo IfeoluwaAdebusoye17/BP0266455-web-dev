@@ -1,34 +1,36 @@
 import {selectProgram} from "../data/program.js";
-import {products} from "../data/products.js";
+import {paths} from "../data/paths.js";
 
 
 let pathsHTML = '';
 
 
-export function displayProducts(filteredProducts) {
+export function displayPaths(filteredPaths) {
   //Need to clear so previous paths dont continue to show
   pathsHTML = '';
-  filteredProducts.forEach(product => {
+  filteredPaths.forEach(item => {
     pathsHTML += `
-      <div class="product-container">
-        <div class="product-image-container">
-          <img class="product-image"
-            src="${product.image}">
+      <div class="path-container">
+        <div class="path-image-container">
+          <img class="path-image"
+            src="${item.image}">
         </div>
-          ${product.name}
-        <div class="product-rating-container">
-          <img class="product-rating-stars"
-            src="images/ratings/rating-${product.rating.stars * 10}.png">
-          <div class="product-rating-count link-primary">
-            ${product.rating.count}
+        <div class="path-name">
+          ${item.name}
+        </div>
+        <div class="path-rating-container">
+          <img class="path-rating-stars"
+            src="images/ratings/rating-${item.rating.stars * 10}.png">
+          <div class="path-rating-count link-primary">
+            ${item.rating.count}
           </div>
         </div>
 
-        <div class="product-spacer"></div>
+        <div class="path-spacer"></div>
 
         <a href="courses.html">
           <button class="add-to-cart-button button-primary js-add-to-cart"
-          data-course-id="${product.id}">
+          data-course-id="${item.id}">
             View Course
           </button>
         </a>
@@ -37,8 +39,6 @@ export function displayProducts(filteredProducts) {
   });
 
   document.querySelector('.js-paths-grid').innerHTML = pathsHTML;
-
-
 
   document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
@@ -84,12 +84,12 @@ export function filterRelevant() {
 
       const selectedOption = document.getElementById('myDropdown').value.toLowerCase();
 
-      const filteredProducts = products.filter(product => 
-        product.name.toLocaleLowerCase().includes(selectedOption)
+      const newFilteredPaths = paths.filter(item => 
+        item.name.toLocaleLowerCase().includes(selectedOption)
       );
       
-      console.log(filteredProducts);
-      displayProducts(filteredProducts);
+      //console.log(newFilteredPaths);
+      displayPaths(newFilteredPaths);
     }); 
   }
 }

@@ -41,12 +41,6 @@ currentSelectedPath.forEach((item) => {
     }
   });
 
-  paths.forEach((item) => {
-    if(item.id === currentSelectedPath.id) {
-      matchingPath === item;
-    }
-  });
-
   
   cartSummaryHTML += `
     <div class="cart-item-container 

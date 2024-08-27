@@ -1,4 +1,4 @@
-import {selectProgram} from "../data/program.js";
+import {selectProgram} from "../data/selected-path-status.js";
 import {paths} from "../data/paths.js";
 
 

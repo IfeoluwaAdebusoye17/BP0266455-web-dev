@@ -1,4 +1,4 @@
-import { program, removeFromCart } from "../data/program.js";
+import { currentSelectedPath, removeFromCart } from "../data/selected-path-status.js";
 import { paths } from "../data/paths.js"; 
 
 
@@ -30,35 +30,41 @@ document.addEventListener('DOMContentLoaded', () => {
 
 let cartSummaryHTML = '';
 
-program.forEach((programItem) => {
-  const programId = programItem.courseId;
+currentSelectedPath.forEach((item) => {
+  const pathId = item.pathId;
 
-  let matchingProgram;
+  let matchingPath;
 
-  paths.forEach((program) => {
-    if(program.id === programId) {
-      matchingProgram = program
+  paths.forEach((item) => {
+    if(item.id === pathId) {
+      matchingPath = item;
+    }
+  });
+
+  paths.forEach((item) => {
+    if(item.id === currentSelectedPath.id) {
+      matchingPath === item;
     }
   });
 
   
   cartSummaryHTML += `
     <div class="cart-item-container 
-    js-cart-item-container-${matchingProgram.id}">
+    js-cart-item-container-${matchingPath.id}">
       <div class="delivery-date">
-        This is the ‘Welcome to ${matchingProgram.name} training path’ complete the courses to understand your role
+        This is the ‘Welcome to ${matchingPath.name} training path’ complete the courses to understand your role
       </div>
 
       <div class="cart-item-details-grid">
         <img class="product-image"
-          src="${matchingProgram.image}">
+          src="${matchingPath.image}">
 
         <div class="cart-item-details">
           <div class="product-name">
-            ${matchingProgram.name}
+            ${matchingPath.name}
           </div>
           <div class="product-quantity">
-            <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProgram.id}">
+            <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingPath.id}">
               Unenroll
             </span>
           </div>
@@ -71,20 +77,20 @@ program.forEach((programItem) => {
           <div class="delivery-option">
             <input type="radio" checked
               class="delivery-option-input"
-              name="delivery-option-${matchingProgram.id}">
+              name="delivery-option-${matchingPath.id}">
             <div>
               <div class="delivery-option-date">
                 Course One: Get started
               </div>
               <div class="delivery-option-price">
-                ${matchingProgram.courseOne}
+                ${matchingPath.courseOne}
               </div>
             </div>
           </div>
           <div class="delivery-option">
             <input type="radio"
               class="delivery-option-input"
-              name="delivery-option-${matchingProgram.id}">
+              name="delivery-option-${matchingPath.id}">
             <div>
               <div class="delivery-option-date">
                 Course Two: Get setup
@@ -98,7 +104,7 @@ program.forEach((programItem) => {
           <div class="delivery-option">
             <input type="radio"
               class="delivery-option-input"
-              name="delivery-option-${matchingProgram.id}">
+              name="delivery-option-${matchingPath.id}">
             <div>
               <div class="delivery-option-date">
                 Course Three: Attempt lab

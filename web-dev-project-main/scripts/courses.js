@@ -43,67 +43,74 @@ currentSelectedPath.forEach((item) => {
 
   
   learningPathSummaryHTML += `
-    <div class="cart-item-container 
-    js-cart-item-container-${matchingPath.id}">
-      <div class="delivery-date">
+    <div class="selected-path-container 
+    js-selected-path-container-${matchingPath.id}">
+      <div class="path-title">
         This is the ‘Welcome to ${matchingPath.name} training path’ complete the courses to understand your role
       </div>
 
-      <div class="cart-item-details-grid">
-        <img class="product-image"
+      <div class="selected-path-details-grid">
+        <img class="path-image"
           src="${matchingPath.image}">
 
-        <div class="cart-item-details">
-          <div class="product-name">
+        <div>
+          <div class="path-name">
             ${matchingPath.name}
           </div>
-          <div class="product-quantity">
-            <span class="delete-quantity-link link-primary js-delete-link" data-path-id="${matchingPath.id}">
+          <div>
+            <span class="link-primary js-delete-link" data-path-id="${matchingPath.id}">
               Unenroll
             </span>
           </div>
         </div>
 
-        <div class="delivery-options">
-          <div class="delivery-options-title">
+        <div class="course-options">
+          <div class="course-options-title">
             Courses in program:
           </div>
-          <div class="delivery-option">
+          <div class="course-option">
+
+
+          <!--
+            This is to allow the different courses to be selected with the radio element
+            with their unique id's in their name so it remains selected.
+          -->
+
             <input type="radio" checked
-              class="delivery-option-input"
-              name="delivery-option-${matchingPath.id}">
+              class="course-option-input"
+              name="course-option-${matchingPath.id}">
             <div>
-              <div class="delivery-option-date">
+              <div class="course-title">
                 Course One: Get started
               </div>
-              <div class="delivery-option-price">
+              <div class="course-descriptions">
                 ${matchingPath.courseOne}
               </div>
             </div>
           </div>
-          <div class="delivery-option">
+          <div class="course-option">
             <input type="radio"
-              class="delivery-option-input"
-              name="delivery-option-${matchingPath.id}">
+              class="course-option-input"
+              name="course-option-${matchingPath.id}">
             <div>
-              <div class="delivery-option-date">
+              <div class="course-title">
                 Course Two: Get setup
               </div>
-              <div class="delivery-option-price">
+              <div class="course-descriptions">
                 In this course we will discuss how we can get setup in this environment called engineering alright you will be able to see how we can accurately show our passions for
                 this topic.
               </div>
             </div>
           </div>
-          <div class="delivery-option">
+          <div class="course-option">
             <input type="radio"
-              class="delivery-option-input"
-              name="delivery-option-${matchingPath.id}">
+              class="course-option-input"
+              name="course-option-${matchingPath.id}">
             <div>
-              <div class="delivery-option-date">
+              <div class="course-title">
                 Course Three: Attempt lab
               </div>
-              <div class="delivery-option-price">
+              <div class="course-descriptions">
                 This is the final course where we will eat the malt together and praise his name together you are worthy of praise JESUS.
               </div>
             </div>
@@ -125,7 +132,7 @@ document.querySelector('.js-learning-path-summary')
         removeStoredPath();
 
         const container = document.querySelector(
-          `.js-cart-item-container-${pathId}`
+          `.js-selected-path-container-${pathId}`
         )
 
         container.remove();

@@ -90,7 +90,7 @@ program.forEach((programItem) => {
                 Course Two: Get setup
               </div>
               <div class="delivery-option-price">
-                In this course we will discuss how we can get setup in this environment called engineerig alright you will be able to see how we can accurately show our passions for
+                In this course we will discuss how we can get setup in this environment called engineering alright you will be able to see how we can accurately show our passions for
                 this topic.
               </div>
             </div>
@@ -115,7 +115,7 @@ program.forEach((programItem) => {
 });
 
 
-document.querySelector('.js-order-summary')
+document.querySelector('.js-learning-path-summary')
   .innerHTML = cartSummaryHTML;
 
   document.querySelectorAll('.js-delete-link')

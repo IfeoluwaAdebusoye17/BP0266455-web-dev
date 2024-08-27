@@ -26,7 +26,7 @@ export function displayProducts(filteredProducts) {
 
         <div class="product-spacer"></div>
 
-        <a href="program.html">
+        <a href="courses.html">
           <button class="add-to-cart-button button-primary js-add-to-cart"
           data-course-id="${product.id}">
             View Course

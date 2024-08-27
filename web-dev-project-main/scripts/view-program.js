@@ -122,7 +122,7 @@ document.querySelector('.js-learning-path-summary')
     .forEach((link) => {
       link.addEventListener('click', () => {
         const productId = link.dataset.productId;
-        removeStoredPath(productId);
+        removeStoredPath();
 
         const container = document.querySelector(
           `.js-cart-item-container-${productId}`

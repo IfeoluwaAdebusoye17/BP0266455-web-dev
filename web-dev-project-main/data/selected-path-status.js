@@ -25,17 +25,9 @@ export function selectPath(pathId) {
   saveToStorage()
 }
 
-export function removeStoredPath(productId) {
+export function removeStoredPath() {
+  
   const newStoredPath = [];
-
-  currentSelectedPath.forEach((cartItem) => {
-    
-    if(cartItem.pathId !== productId ) {
-      newStoredPath.push(cartItem);
-    }
-      
-  });
-
   currentSelectedPath = newStoredPath;
 
   saveToStorage();

@@ -1,15 +1,15 @@
-import {program, selectProgram} from "../data/program.js";
+import {selectProgram} from "../data/program.js";
 import {products} from "../data/products.js";
 
 
-let productsHTML = '';
+let pathsHTML = '';
 
 
 export function displayProducts(filteredProducts) {
-  productsHTML = '';
-  //products.forEach((product) => {
+  //Need to clear so previous paths dont continue to show
+  pathsHTML = '';
   filteredProducts.forEach(product => {
-    productsHTML += `
+    pathsHTML += `
       <div class="product-container">
         <div class="product-image-container">
           <img class="product-image"
@@ -36,7 +36,7 @@ export function displayProducts(filteredProducts) {
     `;
   });
 
-  document.querySelector('.js-programs-grid').innerHTML = productsHTML;
+  document.querySelector('.js-paths-grid').innerHTML = pathsHTML;
 
 
 
@@ -50,10 +50,6 @@ export function displayProducts(filteredProducts) {
     });
   });
 }
-
-// Initial display of all products(temp)
-//displayProducts(products);
-
 
 // Drop down functionality
 //To check if element exists before adding event listener

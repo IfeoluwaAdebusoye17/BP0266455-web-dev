@@ -2,7 +2,7 @@ import { currentSelectedPath, removeStoredPath } from "../data/selected-path-sta
 import { paths } from "../data/paths.js"; 
 
 
-
+//Loaded information that was inputted by the user at previous stage
 document.addEventListener('DOMContentLoaded', () => {
   const firstName = localStorage.getItem('firstName');
   const middleName = localStorage.getItem('middleName');
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-let cartSummaryHTML = '';
+let learningPathSummaryHTML = '';
 
 currentSelectedPath.forEach((item) => {
   const pathId = item.pathId;
@@ -42,7 +42,7 @@ currentSelectedPath.forEach((item) => {
   });
 
   
-  cartSummaryHTML += `
+  learningPathSummaryHTML += `
     <div class="cart-item-container 
     js-cart-item-container-${matchingPath.id}">
       <div class="delivery-date">
@@ -58,7 +58,7 @@ currentSelectedPath.forEach((item) => {
             ${matchingPath.name}
           </div>
           <div class="product-quantity">
-            <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingPath.id}">
+            <span class="delete-quantity-link link-primary js-delete-link" data-path-id="${matchingPath.id}">
               Unenroll
             </span>
           </div>
@@ -116,16 +116,16 @@ currentSelectedPath.forEach((item) => {
 
 
 document.querySelector('.js-learning-path-summary')
-  .innerHTML = cartSummaryHTML;
+  .innerHTML = learningPathSummaryHTML;
 
   document.querySelectorAll('.js-delete-link')
     .forEach((link) => {
       link.addEventListener('click', () => {
-        const productId = link.dataset.productId;
+        const pathId = link.dataset.pathId;
         removeStoredPath();
 
         const container = document.querySelector(
-          `.js-cart-item-container-${productId}`
+          `.js-cart-item-container-${pathId}`
         )
 
         container.remove();

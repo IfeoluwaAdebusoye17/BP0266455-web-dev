@@ -1,6 +1,6 @@
 
-import { filterRelevant } from "../scripts/lloyds.js";
-import { displayPaths } from "../scripts/lloyds.js";
+import { filterRelevant } from "../scripts/find-learning-path.js";
+import { displayPaths } from "../scripts/find-learning-path.js";
 
 
 describe('test suite: output for training path', () => {

@@ -1,4 +1,4 @@
-import { isValidName, isValidDate } from "../scripts/lloyds.js";
+import { isValidName, isValidDate } from "../scripts/find-learning-path.js";
 
 describe('test suite: userInput', () => {
     it('returns true when valid name', () => {

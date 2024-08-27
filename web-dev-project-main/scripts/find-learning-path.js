@@ -29,23 +29,24 @@ export function displayPaths(filteredPaths) {
         <div class="path-spacer"></div>
 
         <a href="courses.html">
-          <button class="add-to-cart-button button-primary js-add-to-cart"
-          data-course-id="${item.id}">
-            View Course
+          <button class="go-to-path-button button-primary js-go-to-path"
+            data-path-id="${item.id}">
+            View Path
           </button>
         </a>
       </div>
     `;
   });
 
+  //This allows to locate what they have selected it is a custom html attribute that has been brought into the js to identify the item it the id
   document.querySelector('.js-paths-grid').innerHTML = pathsHTML;
 
-  document.querySelectorAll('.js-add-to-cart')
+  document.querySelectorAll('.js-go-to-path')
   .forEach((button) => {
     button.addEventListener('click', () => {
-      const courseId = button.dataset.courseId;
+      const pathId = button.dataset.pathId;
 
-      selectProgram(courseId);
+      selectProgram(pathId);
         
     });
   });

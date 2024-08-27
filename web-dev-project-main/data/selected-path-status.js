@@ -26,17 +26,17 @@ export function selectPath(pathId) {
 }
 
 export function removeStoredPath(productId) {
-  const newCart = [];
+  const newStoredPath = [];
 
   currentSelectedPath.forEach((cartItem) => {
     
     if(cartItem.pathId !== productId ) {
-      newCart.push(cartItem);
+      newStoredPath.push(cartItem);
     }
       
   });
 
-  currentSelectedPath = newCart;
+  currentSelectedPath = newStoredPath;
 
   saveToStorage();
 }

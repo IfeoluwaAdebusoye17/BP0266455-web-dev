@@ -1,4 +1,4 @@
-import {selectProgram} from "../data/selected-path-status.js";
+import {selectPath} from "../data/selected-path-status.js";
 import {paths} from "../data/paths.js";
 
 
@@ -46,7 +46,7 @@ export function displayPaths(filteredPaths) {
     button.addEventListener('click', () => {
       const pathId = button.dataset.pathId;
 
-      selectProgram(pathId);
+      selectPath(pathId);
         
     });
   });

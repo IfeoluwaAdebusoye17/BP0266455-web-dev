@@ -16,7 +16,7 @@ function saveToStorage() {
   localStorage.setItem('storedPath', JSON.stringify(currentSelectedPath));
 }
 
-export function selectProgram(pathId) {
+export function selectPath(pathId) {
   currentSelectedPath[0] = {
     pathId: pathId,
   };

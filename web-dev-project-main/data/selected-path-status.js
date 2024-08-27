@@ -25,7 +25,7 @@ export function selectPath(pathId) {
   saveToStorage()
 }
 
-export function removeFromCart(productId) {
+export function removeStoredPath(productId) {
   const newCart = [];
 
   currentSelectedPath.forEach((cartItem) => {

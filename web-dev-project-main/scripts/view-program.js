@@ -1,4 +1,4 @@
-import { currentSelectedPath, removeFromCart } from "../data/selected-path-status.js";
+import { currentSelectedPath, removeStoredPath } from "../data/selected-path-status.js";
 import { paths } from "../data/paths.js"; 
 
 
@@ -122,7 +122,7 @@ document.querySelector('.js-learning-path-summary')
     .forEach((link) => {
       link.addEventListener('click', () => {
         const productId = link.dataset.productId;
-        removeFromCart(productId);
+        removeStoredPath(productId);
 
         const container = document.querySelector(
           `.js-cart-item-container-${productId}`

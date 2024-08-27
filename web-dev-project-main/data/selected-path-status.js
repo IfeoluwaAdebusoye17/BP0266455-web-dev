@@ -3,7 +3,7 @@ export let currentSelectedPath;
 loadFromStorage();
 
 export function loadFromStorage() {
-  currentSelectedPath = JSON.parse(localStorage.getItem('cart'));  
+  currentSelectedPath = JSON.parse(localStorage.getItem('storedPath'));  
 
   if (!currentSelectedPath) {
     currentSelectedPath = [{
@@ -13,7 +13,7 @@ export function loadFromStorage() {
 }
 
 function saveToStorage() {
-  localStorage.setItem('cart', JSON.stringify(currentSelectedPath));
+  localStorage.setItem('storedPath', JSON.stringify(currentSelectedPath));
 }
 
 export function selectProgram(pathId) {

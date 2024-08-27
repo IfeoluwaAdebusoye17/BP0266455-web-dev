@@ -11,7 +11,7 @@ describe('test suite: selectedProgram', () => {
         spyOn(localStorage, 'getItem').and.callFake(() => {
             return JSON.stringify([]);
         });
-        console.log(localStorage.getItem('cart'));
+        console.log(localStorage.getItem('storedPath'));
         loadFromStorage();
 
         selectProgram('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');

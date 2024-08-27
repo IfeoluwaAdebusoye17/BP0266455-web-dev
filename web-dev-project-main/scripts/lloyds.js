@@ -36,7 +36,7 @@ export function displayProducts(filteredProducts) {
     `;
   });
 
-  document.querySelector('.js-products-grid').innerHTML = productsHTML;
+  document.querySelector('.js-programs-grid').innerHTML = productsHTML;
 
 
 

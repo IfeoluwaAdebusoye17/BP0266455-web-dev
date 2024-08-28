@@ -97,7 +97,7 @@ currentSelectedPath.forEach((item) => {
                 Course Two: Get setup
               </div>
               <div class="course-descriptions">
-                In this course we will discuss how we can get setup in this environment called engineering alright you will be able to see how we can accurately show our passions for
+                In this course we will discuss how we can get setup in this environment you will be able to see how we can accurately show our passions for
                 this topic.
               </div>
             </div>
@@ -111,7 +111,7 @@ currentSelectedPath.forEach((item) => {
                 Course Three: Attempt lab
               </div>
               <div class="course-descriptions">
-                This is the final course where we will eat the malt together and praise his name together you are worthy of praise JESUS.
+                This is the final course where we will attempt the lab and round up.
               </div>
             </div>
           </div>

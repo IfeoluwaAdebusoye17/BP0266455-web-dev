@@ -14,10 +14,10 @@ export const paths = [
     image: "images/products/engineering-technology.jpg",
     name: "Engineering technology",
     rating: {
-      stars: 4.5,
-      count: 87
+      stars: 5,
+      count: 152
     },
-    courseOne: 'In this introduction to Engineering Technology course at Lloyds we will installing setup applications' 
+    courseOne: 'In this introduction to Engineering Technology course at Lloyds we will be installing setup applications' 
   },
   {
     id: "15b6fc6f-327a-4ec4-896f-486349e85a3d",

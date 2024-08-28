@@ -1,3 +1,4 @@
+//We are using local storage to initially keep an object in the cart so the code does not crash. We replace it with the path the user has selected.
 export let currentSelectedPath;
 
 loadFromStorage();
@@ -24,6 +25,8 @@ export function selectPath(pathId) {
 
   saveToStorage()
 }
+
+//If the user clicks unenroll we remove it from the array and store the empty array in local storage
 
 export function removeStoredPath() {
   

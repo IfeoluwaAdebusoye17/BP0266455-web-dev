@@ -1,8 +1,10 @@
+//We are using imports so that we can use functions from those files
+
 import { currentSelectedPath, removeStoredPath } from "../data/selected-path-status.js";
 import { paths } from "../data/paths.js"; 
 
 
-//Loaded information that was inputted by the user at previous stage
+//Loaded information that was inputted by the user at previous stage getting the items that were stored in local storage
 document.addEventListener('DOMContentLoaded', () => {
   const firstName = localStorage.getItem('firstName');
   const middleName = localStorage.getItem('middleName');
@@ -27,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-
+//Using for each loop to check if the selected path id matches one of the id's of all of the paths stored in the array of objects generates HTML and dynamically fills data
 let learningPathSummaryHTML = '';
 
 currentSelectedPath.forEach((item) => {
@@ -121,23 +123,28 @@ currentSelectedPath.forEach((item) => {
   `;
 });
 
+//Using DOM to display HTML
 
 document.querySelector('.js-learning-path-summary')
   .innerHTML = learningPathSummaryHTML;
 
-  document.querySelectorAll('.js-delete-link')
-    .forEach((link) => {
-      link.addEventListener('click', () => {
-        const pathId = link.dataset.pathId;
-        removeStoredPath();
 
-        const container = document.querySelector(
-          `.js-selected-path-container-${pathId}`
-        )
+/*Using for each to add event listener to check if unenroll link clicked. That will remove the custom html element that is being stored for the selected path and it calls function to clear local
+storage so if page is reloaded it is still removed.
+*/
+document.querySelectorAll('.js-delete-link')
+  .forEach((link) => {
+    link.addEventListener('click', () => {
+      const pathId = link.dataset.pathId;
+      removeStoredPath();
 
-        container.remove();
-      })
-    });
+      const container = document.querySelector(
+        `.js-selected-path-container-${pathId}`
+      )
+
+      container.remove();
+    })
+  });
 
 
 

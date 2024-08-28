@@ -1,5 +1,7 @@
 import { isValidName, isValidDate } from "../scripts/find-learning-path.js";
 
+//These tests are to validate use input
+
 describe('test suite: userInput', () => {
     it('returns true when valid name', () => {
         expect(isValidName('John')).toBe(true);

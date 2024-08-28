@@ -57,7 +57,7 @@ General styling for the whole header
   display: flex;
 }
 
-/*find better way to centre*/
+/*To centre search icon*/
 .search-icon {
   height: 22px;
   margin-left: 2px;

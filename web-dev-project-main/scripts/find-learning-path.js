@@ -38,7 +38,7 @@ export function displayPaths(filteredPaths) {
     `;
   });
 
-  //This allows to locate what they have selected it is a custom html attribute that has been brought into the js to identify the item it the id
+  //The button.dataset allows us to locate what they have selected it is a custom html attribute that has been brought into the js to identify the item id which in this case is a path
   document.querySelector('.js-paths-grid').innerHTML = pathsHTML;
 
   document.querySelectorAll('.js-go-to-path')
@@ -53,7 +53,7 @@ export function displayPaths(filteredPaths) {
 }
 
 // Drop down functionality
-//To check if element exists before adding event listener
+//Check if element exists before adding event listener
 
 export function filterRelevant() {
   const myForm = document.getElementById('myForm');
@@ -97,10 +97,13 @@ export function filterRelevant() {
 
 filterRelevant();
 
+//Using external method to check validity of input
 export function isValidName(name) {
   const regex = /^[a-zA-Z ]+$/;
   return regex.test(name);
 }
+
+//Function for the validations
 
 function validateForm() {
   const firstNameInput = document.getElementById("js-first-name").value;
@@ -130,6 +133,8 @@ function validateForm() {
 
   return true;
 }
+
+//Function to check if input day is not in past
 
 
 export function isValidDate(date) {
